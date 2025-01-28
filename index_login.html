@@ -21,6 +21,13 @@
                     <img src="ojt photos/subang_farm.png" alt="Partner 5">
                     <img src="ojt photos/agri_online.png" alt="Partner 6">
                     <img src="ojt photos/sunfood.png" alt="Partner 7">
+                    <img src="ojt photos/Geniustech.png" alt="Partner 1">
+                    <img src="ojt photos/agrilogo2.png" alt="Partner 2">
+                    <img src="ojt photos/farmtech.png" alt="Partner 3">
+                    <img src="ojt photos/DJas.png" alt="Partner 4">
+                    <img src="ojt photos/subang_farm.png" alt="Partner 5">
+                    <img src="ojt photos/agri_online.png" alt="Partner 6">
+                    <img src="ojt photos/sunfood.png" alt="Partner 7">
                 </div>
             </div>
         </header>
@@ -37,38 +44,5 @@
             </form>
         </div>
     </div>
-    <script>
-        document.getElementById('login-form').addEventListener('submit', async function (event) {
-            event.preventDefault(); // Prevent form reload
-    
-            // Get input values
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-    
-            try {
-                // Send login credentials to backend API
-                const response = await fetch('/api/login/', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded',
-                    },
-                    body: new URLSearchParams({ username, password }),
-                });
-    
-                const result = await response.json();
-    
-                // Handle server response
-                if (result.success) {
-                    alert(result.message); // Optional: Notify the user
-                    window.location.href = '../index_dboard.html'; // Redirect to dashboard
-                } else {
-                    alert(result.message || 'Invalid credentials');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                alert('An error occurred. Please try again.');
-            }
-        });
-    </script>
 </body>
 </html>

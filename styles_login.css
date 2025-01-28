@@ -128,7 +128,7 @@ header {
 
 .partner-logos-inner {
     display: inline-flex;
-    animation: scroll-logos 20s linear infinite; /* Adjust duration for speed */
+    animation: scroll-logos 20s linear infinite; /* Keeps the infinite scroll */
 }
 
 .partner-logos-inner img {
@@ -144,11 +144,11 @@ header {
 }
 
 @keyframes scroll-logos {
-    from {
+    0% {
         transform: translateX(0);
     }
-    to {
-        transform: translateX(-50%);
+    100% {
+        transform: translateX(-50%); /* Adjusted to move across the entire container */
     }
 }
 

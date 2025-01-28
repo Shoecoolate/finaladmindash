@@ -16,7 +16,7 @@
   <div class="menu" id="menu">
     <ul>
       <li class="menu-item" onclick="navigateTo('dashboard')">
-        <img src="ojt photos/announcement_icon.png" alt="Dashboard">
+        <img src="ojt photos/dashboard_icon.png" alt="Dashboard">
         Dashboard
       </li>
       <li class="menu-item" onclick="navigateTo('log')">
@@ -24,39 +24,45 @@
         Log
       </li>
       <li class="menu-item" onclick="navigateTo('attendance-list')">
-        <img src="ojt photos/dashboard_icon.png" alt="Attendance">
+        <img src="ojt photos/attendance_icon.png" alt="Attendance List">
         Attendance List
       </li>
       <li class="menu-item" onclick="navigateTo('work-hours')">
-        <img src="work-hours-icon.png" alt="Work Hours">
+        <img src="ojt photos/clock_icon.png" alt="Work Hours">
         Work Hours Preset
       </li>
       <li class="menu-item" onclick="navigateTo('announcement')">
-        <img src="announcement-icon.png" alt="Announcement">
+        <img src="ojt photos/announcement_icon.png" alt="Announcement">
         Announcement
+      </li>
+      <li class="menu-item" onclick="navigateTo('export-excel')">
+        <img src="ojt photos/excel_icon.png" alt="Export Excel">
+        Export Excel
       </li>
     </ul>
   </div>
 
   <!-- Screens -->
   <div id="dashboard" class="screen">
-    <h1>Dashboard</h1>
+    <h1 id="dashboard_title">Dashboard</h1>
     <div class="dashboard-icons">
+      <div class="dashboard-icon" onclick="navigateTo('dashboard')">
+        <img src="ojt photos/dashboard_icon.png" alt="Dashboard">
+      </div>
       <div class="dashboard-icon" onclick="navigateTo('log')">
-        <img src="log-icon.png" alt="Log">
-        <p>Log</p>
+        <img src="ojt photos/log_icon.png" alt="Log">
       </div>
       <div class="dashboard-icon" onclick="navigateTo('attendance-list')">
-        <img src="attendance-icon.png" alt="Attendance List">
-        <p>Attendance List</p>
+        <img src="ojt photos/attendance_icon.png" alt="Attendance List">
       </div>
       <div class="dashboard-icon" onclick="navigateTo('work-hours')">
-        <img src="work-hours-icon.png" alt="Work Hours Preset">
-        <p>Work Hours</p>
+        <img src="ojt photos/clock_icon.png" alt="Work Hours Preset">
       </div>
       <div class="dashboard-icon" onclick="navigateTo('announcement')">
-        <img src="announcement-icon.png" alt="Announcement">
-        <p>Announcement</p>
+        <img src="ojt photos/announcement_icon.png" alt="Announcement">
+      </div>
+      <div class="dashboard-icon" onclick="navigateTo('export-excel')">
+        <img src="ojt photos/excel_icon.png" alt="Export Excel">
       </div>
     </div>
   </div>
@@ -85,7 +91,7 @@
   <div id="announcement" class="screen">
     <h1>Announcement</h1>
     <textarea placeholder="Write announcement here"></textarea>
-    <button>Post git Announcement</button>
+    <button>Post Announcement</button>
   </div>
 
   <script src="function_admin.js"></script>

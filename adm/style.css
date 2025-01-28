@@ -67,7 +67,9 @@ body, ul, li {
   .screen {
     display: none;
     padding: 20px;
-  }
+    padding-left: 320px; /* Add padding to push content to the right */
+}
+
   
   #dashboard {
     display: block;

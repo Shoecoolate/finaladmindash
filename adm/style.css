@@ -34,7 +34,7 @@ body, ul, li {
     background-image: url('ojt photos/red1.jpg');
     background-size: cover;
     background-position: center;
-    color: white;
+    color: black;
     transition: left 0.3s ease;
     padding: 20px;
 }

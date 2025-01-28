@@ -26,3 +26,10 @@ function toggleMenu() {
     menu.style.left = '-300px';
   }
   
+
+  function showLogPage() {
+    // Example of showing the log section
+    document.getElementById('log_section').style.display = 'block';
+}
+
+  

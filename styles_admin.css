@@ -31,7 +31,7 @@ body, html {
 .menu {
   position: fixed;
   top: 0;
-  left: -300px;
+  left: -300px;  /* Initially hidden */
   width: 300px;
   height: 100%;
   background-image: url('ojt photos/red1.jpg');
@@ -40,6 +40,7 @@ body, html {
   color: white;
   transition: left 0.3s ease;
   padding: 20px;
+  z-index: 2;  /* Higher z-index than the Log text to cover it */
 }
 
 .menu ul {
@@ -141,4 +142,44 @@ button {
 
 button:hover {
   background-color: #2980b9;
+}
+
+#log_rectangle {
+  width: 2000px;  /* Fixed width for the rectangle */
+  height: 400px;  /* Height of the rectangle */
+  background-color: #f0f0f0;  /* Same background color as the buttons */
+  border-radius: 15px;  /* Rounded corners */
+  margin: 20px auto;  /* Centers the rectangle horizontally and adds space above */
+}
+
+#log h1 {
+  position: absolute;
+  top: 20px;  /* Position it below the top edge */
+  left: 60px; /* Position it to the right of the menu icon */
+  font-size: 32px;
+  z-index: 1;  /* Make sure the text is below the menu when it pops up */
+}
+
+#attendance_rectangle {
+  width: 2000px;  /* Fixed width for the rectangle */
+  height: 400px;  /* Height of the rectangle */
+  background-color: #f0f0f0;  /* Same background color as the buttons */
+  border-radius: 15px;  /* Rounded corners */
+  margin: 20px auto;  /* Centers the rectangle horizontally and adds space above */
+}
+
+#attendance-list h1 {
+  position: absolute;
+  top: 20px;  /* Position it below the top edge */
+  left: 60px; /* Position it to the right of the menu icon */
+  font-size: 32px;
+  z-index: 1;  /* Make sure the text is below the menu when it pops up */
+}
+
+#attendance-list h2 {
+  position: absolute;
+  top: 80px;  /* Position it below the top edge */
+  left: 100px; /* Position it to the right of the menu icon */
+  font-size: 27px;
+  z-index: 1;  /* Make sure the text is below the menu when it pops up */
 }

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Menu Icon -->
+  <div class="menu-icon" onclick="toggleMenu()">
+    <img src="menu-icon.png" alt="Menu Icon">
+  </div>
+
+  <!-- Menu Pop-Up -->
+  <div class="menu" id="menu">
+    <ul>
+      <li class="menu-item" onclick="navigateTo('dashboard')">
+        <img src="dashboard-icon.png" alt="Dashboard">
+        Dashboard
+      </li>
+      <li class="menu-item" onclick="navigateTo('log')">
+        <img src="log-icon.png" alt="Log">
+        Log
+      </li>
+      <li class="menu-item" onclick="navigateTo('attendance-list')">
+        <img src="attendance-icon.png" alt="Attendance">
+        Attendance List
+      </li>
+      <li class="menu-item" onclick="navigateTo('work-hours')">
+        <img src="work-hours-icon.png" alt="Work Hours">
+        Work Hours Preset
+      </li>
+      <li class="menu-item" onclick="navigateTo('announcement')">
+        <img src="announcement-icon.png" alt="Announcement">
+        Announcement
+      </li>
+    </ul>
+  </div>
+
+  <!-- Screens -->
+  <div id="dashboard" class="screen">
+    <h1>Dashboard</h1>
+    <div class="dashboard-icons">
+      <div class="dashboard-icon" onclick="navigateTo('log')">
+        <img src="log-icon.png" alt="Log">
+        <p>Log</p>
+      </div>
+      <div class="dashboard-icon" onclick="navigateTo('attendance-list')">
+        <img src="attendance-icon.png" alt="Attendance List">
+        <p>Attendance List</p>
+      </div>
+      <div class="dashboard-icon" onclick="navigateTo('work-hours')">
+        <img src="work-hours-icon.png" alt="Work Hours Preset">
+        <p>Work Hours</p>
+      </div>
+      <div class="dashboard-icon" onclick="navigateTo('announcement')">
+        <img src="announcement-icon.png" alt="Announcement">
+        <p>Announcement</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="log" class="screen">
+    <h1>Log</h1>
+    <input type="text" placeholder="Enter log details">
+    <button>Save Log</button>
+  </div>
+
+  <div id="attendance-list" class="screen">
+    <h1>Attendance List</h1>
+    <select>
+      <option>By Company</option>
+      <option>By Date</option>
+    </select>
+    <button>View Attendance</button>
+  </div>
+
+  <div id="work-hours" class="screen">
+    <h1>Work Hours Preset</h1>
+    <input type="time">
+    <button>Save Preset</button>
+  </div>
+
+  <div id="announcement" class="screen">
+    <h1>Announcement</h1>
+    <textarea placeholder="Write announcement here"></textarea>
+    <button>Post git Announcement</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

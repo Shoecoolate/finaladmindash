@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles_login.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="ojt photos/SFgroup.png" alt="SF Group of Companies">
+            </div>
+            <div class="partner-logos">
+                <div class="partner-logos-inner">
+                    <img src="ojt photos/Geniustech.png" alt="Partner 1">
+                    <img src="ojt photos/agrilogo2.png" alt="Partner 2">
+                    <img src="ojt photos/farmtech.png" alt="Partner 3">
+                    <img src="ojt photos/DJas.png" alt="Partner 4">
+                    <img src="ojt photos/subang_farm.png" alt="Partner 5">
+                    <img src="ojt photos/agri_online.png" alt="Partner 6">
+                    <img src="ojt photos/sunfood.png" alt="Partner 7">
+                </div>
+            </div>
+        </header>
+        <div class="form-container">
+            <h1>SFGC Timekeeping System</h1>    
+            <form id="login-form" method="POST">
+                <div class="input-group">
+                    <input type="text" id="username" name="username" placeholder="Employee ID" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="PIN (4 Digits)" minlength="4" maxlength="4" required>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevent form reload
+    
+            // Get input values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+    
+            try {
+                // Send login credentials to backend API
+                const response = await fetch('/api/login/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({ username, password }),
+                });
+    
+                const result = await response.json();
+    
+                // Handle server response
+                if (result.success) {
+                    alert(result.message); // Optional: Notify the user
+                    window.location.href = '../index_dboard.html'; // Redirect to dashboard
+                } else {
+                    alert(result.message || 'Invalid credentials');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+    </script>
+</body>
+</html>

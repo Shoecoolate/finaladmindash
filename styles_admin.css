@@ -94,13 +94,12 @@ body, html {
   margin-top: 20px;
   width: 100%;
   max-width: 800px;
-  margin-top: 100px;
 }
 
 .dashboard-icon {
   width: 150px;
   height: 150px;
-  background-color: #ecf0f1;
+  background-image: url('ojt photos/grey bg.png');
   border-radius: 10px;
   display: flex;
   flex-direction: column;

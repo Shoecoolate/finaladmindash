@@ -1,4 +1,8 @@
 /* General Reset */
+body {
+  background-image: url('ojt photos/white8.jpg');
+  background-size: cover;
+}
 body, html {
   margin: 0;
   padding: 0;
@@ -7,8 +11,6 @@ body, html {
   display: flex;
   justify-content: center; /* Horizontally center content */
   align-items: center;     /* Vertically center content */
-  background-image: url('ojt photos/white8.jpg');
-  background-size: cover;
 }
 
 /* Menu Icon */

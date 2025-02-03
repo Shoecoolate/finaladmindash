@@ -10,7 +10,15 @@ body, html {
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center; /* Horizontally center content */
-  align-items: center;     /* Vertically center content */
+  align-items: flex-start; /* Align items at the top to avoid extra space */
+  overflow: hidden;  /* Prevent both vertical and horizontal scrollbars */
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevent overflow inside container */
 }
 
 /* Menu Icon */
@@ -40,7 +48,7 @@ body, html {
   color: white;
   transition: left 0.3s ease;
   padding: 20px;
-  z-index: 2;  /* Higher z-index than the Log text to cover it */
+  z-index: 2;  /* Lower z-index to ensure text stays on top */
 }
 
 .menu ul {
@@ -67,8 +75,14 @@ body, html {
 
 /* Screens */
 .screen {
-  display: none;
+  display: none; /* Hidden initially */
+  position: absolute; /* Prevent elements from moving up */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   padding: 20px;
+  overflow-y: auto; /* Scroll only if content overflows */
 }
 
 #dashboard {
@@ -145,11 +159,13 @@ button:hover {
 }
 
 #log_rectangle {
-  width: 2000px;  /* Fixed width for the rectangle */
-  height: 400px;  /* Height of the rectangle */
-  background-color: #f0f0f0;  /* Same background color as the buttons */
-  border-radius: 15px;  /* Rounded corners */
-  margin: 20px auto;  /* Centers the rectangle horizontally and adds space above */
+  width: 1000px;
+  height: 500px; 
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  margin: 100px auto;
+  overflow: hidden;  /* Prevent any overflow */
+  box-sizing: border-box;  /* Ensure padding is included in width/height */
 }
 
 #log h1 {
@@ -157,15 +173,30 @@ button:hover {
   top: 20px;  /* Position it below the top edge */
   left: 60px; /* Position it to the right of the menu icon */
   font-size: 32px;
-  z-index: 1;  /* Make sure the text is below the menu when it pops up */
+  z-index: 0;  /* Lower z-index so the menu can cover it */
+
+}
+
+#log {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
 #attendance_rectangle {
-  width: 2000px;  /* Fixed width for the rectangle */
-  height: 400px;  /* Height of the rectangle */
-  background-color: #f0f0f0;  /* Same background color as the buttons */
-  border-radius: 15px;  /* Rounded corners */
-  margin: 20px auto;  /* Centers the rectangle horizontally and adds space above */
+  width: 1000px;
+  height: 500px; 
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  margin: 100px auto;
+  margin-top: 150px;
+  margin-bottom: 50px;
+  overflow: hidden;  /* Prevent any overflow */
+  box-sizing: border-box;  /* Ensure padding is included in width/height */
+  position: relative;
 }
 
 #attendance-list h1 {
@@ -173,13 +204,133 @@ button:hover {
   top: 20px;  /* Position it below the top edge */
   left: 60px; /* Position it to the right of the menu icon */
   font-size: 32px;
-  z-index: 1;  /* Make sure the text is below the menu when it pops up */
+  z-index: 1;
 }
 
 #attendance-list h2 {
   position: absolute;
-  top: 80px;  /* Position it below the top edge */
-  left: 100px; /* Position it to the right of the menu icon */
+  top: 80px;  /* Position it below the h1 title */
+  left: 100px; /* Adjust as needed */
   font-size: 27px;
-  z-index: 1;  /* Make sure the text is below the menu when it pops up */
+  z-index: 1;
+}
+
+#attendance-list {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;  /* Align the items at the top */
+  flex-direction: column;  /* Stack content vertically */
+  height: 100%;  /* Take full height to ensure the content fits */
+}
+
+/* Work Hours Preset Screen */
+#work-hours {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 80%;  /* Keep width as it is */
+  max-width: 500px;
+  height: 450px;
+  margin: 0; /* This will center the container horizontally */
+  background-image: url('ojt photos/grey bg.png');
+  background-size: cover;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-left: 300px;
+  margin-top: 50px;
+}
+
+#work-hours h1 {
+  font-size: 32px;
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.work-hours-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10px;
+}
+
+.work-hours-content {
+  width: 95%;
+  height: 150px;
+  margin-bottom: 20px; /* Space between this content and the buttons */
+  padding: 10px;
+  border-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.8);  /* Optional, add a background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional, shadow for better separation */
+}
+
+.work-hours-actions {
+  display: flex;
+  justify-content: center; /* Horizontally center the buttons */
+  align-items: center;     /* Vertically center the buttons */
+  gap: 20px;               /* Space between the buttons */
+  width: 100%;
+}
+
+.work-hours-actions button {
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.work-hours-actions button:hover {
+  background-color: #2980b9;
+}
+
+.separator {
+  width: 500px; /* Adjust the width of the separator */
+  height: 2px;
+  background-color: #6f6f6f; /* Light grey color for the separator */
+  margin: 10px 0; /* Adds space above and below the line */
+}
+
+.grace-period {
+  display: flex;
+  flex-direction: column; /* Change the flex direction to column to stack label and input vertically */
+  align-items: center;
+  gap: 10px; /* Space between label and input */
+}
+
+.grace-period label {
+  text-align: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.grace-period select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 150px; /* Adjust width as needed */
+}
+
+.grace-period-input-container {
+  justify-content: center;
+  display: flex;
+  gap: 10px; /* Space between input and button */
+}
+
+.save-button {
+  padding: 10px 20px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.save-button:hover {
+  background-color: #27ae60;
 }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
+  <title>Dashboard</title>  
   <link rel="stylesheet" href="styles_admin.css">
 </head>
 <body>
@@ -43,7 +43,7 @@
   </div>
 
   <!-- Screens -->
-  <div id="dashboard" class="screen">
+  <div id="dashboard" class="screen" style="display: flex;">
     <h1 id="dashboard_title">Dashboard</h1>
     <div class="dashboard-icons">
       <div class="dashboard-icon" onclick="navigateTo('dashboard')">
@@ -67,24 +67,52 @@
     </div>
   </div>
 
-  <div id="log" class="screen">
+  <div id="log" class="screen" style="display: none;">
     <h1>Log</h1>
-    <div id="log_rectangle"></div>  <!-- This is the big rectangle -->
+    <div id="log_rectangle"></div>
   </div>
 
-  <div id="attendance-list" class="screen">
+  <div id="attendance-list" class="screen" style="display: none;">
     <h1>Attendance List</h1>
     <h2>Time log > By company</h2>
-      <div id="attendance_rectangle"></div>  <!-- This is the big rectangle -->
+    <div id="attendance_rectangle"></div>
   </div>
 
-  <div id="work-hours" class="screen">
+  <div id="work-hours" class="screen" style="display: none;">
     <h1>Work Hours Preset</h1>
-    <input type="time">
-    <button>Save Preset</button>
-  </div>
+    
+    <!-- Separator between heading and container -->
+    <div class="separator"></div>
+  
+    <!-- New container between the heading and buttons -->
+    <div class="work-hours-content">
+      <p>Additional work hours information can go here.</p>
+    </div>
+  
+    <div class="work-hours-container">
+      <div class="work-hours-actions">
+        <button onclick="addWorkHours()">Add</button>
+        <button onclick="editWorkHours()">Edit</button>
+        <button onclick="deleteWorkHours()">Delete</button>
+      </div>
+      
+      <!-- Line separator here -->
+      <div class="separator"></div>
+      
+      <div class="grace-period">
+        <label for="grace-period">Grace Period (minutes):</label>
+        <div class="grace-period-input-container">
+          <select id="grace-period" name="grace-period">
+            <option value="5">5 minutes</option>
+            <option value="10">10 minutes</option>
+            <option value="15">15 minutes</option>
+          </select>
+          <button class="save-button" onclick="saveWorkHours()">Save</button>
+        </div>
+      </div>
+  
 
-  <div id="announcement" class="screen">
+  <div id="announcement" class="screen" style="display: none;">
     <h1>Announcement</h1>
     <textarea placeholder="Write announcement here"></textarea>
     <button>Post Announcement</button>

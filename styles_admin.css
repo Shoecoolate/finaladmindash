@@ -1,7 +1,9 @@
 /* General Reset */
 body {
-  background-image: url('ojt photos/white8.jpg');
+  background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), 
+  url('ojt photos/white1 bg.jpg');
   background-size: cover;
+  background-position: center;
 }
 body, html {
   margin: 0;
@@ -25,14 +27,14 @@ body, html {
 .menu-icon {
   position: fixed;
   top: 10px;
-  left: 10px;
+  left: 7px;
   cursor: pointer;
   z-index: 10;
 }
 
 .menu-icon img {
-  width: 40px;
-  height: 40px;
+  width: 25px;
+  height: auto;
 }
 
 /* Menu Pop-Up */
@@ -56,12 +58,15 @@ body, html {
 }
 
 .menu-item {
-  padding: 10px;
-  display: flex;
+  padding: 15px;
+  display: flex
+;
   align-items: center;
   cursor: pointer;
   transition: background-color 0.3s;
   border-radius: 5px;
+  gap: 12px;
+  margin-left: -71px;
 }
 
 .menu-item:hover {
@@ -114,7 +119,7 @@ body, html {
 .dashboard-icon {
   width: 150px;
   height: 150px;
-  background-image: url('ojt photos/grey bg.png');
+  background-image: url('ojt photos/grey\ bg.png');
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -134,10 +139,6 @@ body, html {
 .dashboard-icon p {
   font-size: 14px;
   margin-top: 8px;
-}
-
-.dashboard-icon:hover {
-  transform: scale(1.05);
 }
 
 button, input, select, textarea {
@@ -335,7 +336,6 @@ button:hover {
 .save-button:hover {
   background-color: #27ae60;
 }
-
 
 /* Export to Excel Container (Centered) */
 .export-container {

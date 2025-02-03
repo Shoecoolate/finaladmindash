@@ -335,3 +335,50 @@ button:hover {
 .save-button:hover {
   background-color: #27ae60;
 }
+
+
+/* Export to Excel Container (Centered) */
+.export-container {
+  background-color: #5a1e1e; /* Dark Red */
+  width: 450px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  
+  /* Centering the container */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Export Buttons */
+.export-button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px 0;
+  transition: background 0.3s;
+}
+
+.export-button:hover {
+  background-color: #ddd;
+}
+
+#export-excel h1 {
+  position: absolute;
+  top: 20px;  /* Adjust as needed */
+  left: 60px; /* Push the text right to avoid menu overlap */
+  font-size: 32px;
+  font-weight: bold;
+  z-index: 1; /* Ensure it stays above other elements */
+}

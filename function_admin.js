@@ -49,3 +49,48 @@ function saveWorkHours() {
     alert("Please enter a grace period.");
   }
 }
+// Function to save announcement
+function saveAnnouncement() {
+  const announcementText = document.getElementById("announcement-text").value;
+
+  if (announcementText.trim() === "") {
+      alert("Please enter an announcement.");
+      return;
+  }
+
+  document.getElementById("saved-announcements").value += announcementText + "\n\n";
+  document.getElementById("announcement-text").value = ""; // Clear input field
+  alert("Announcement saved successfully.");
+}
+
+// Function to post announcement
+function postAnnouncement() {
+  const selectedOption = document.getElementById("post-options").value;
+  const announcements = document.getElementById("saved-announcements").value.trim();
+
+  if (!announcements) {
+      alert("No saved announcements available.");
+      return;
+  }
+
+  alert(`Posting announcements: ${selectedOption}`);
+}
+
+// Function to delete saved announcements
+function deleteAnnouncement() {
+  if (confirm("Are you sure you want to delete all saved announcements?")) {
+      document.getElementById("saved-announcements").value = "";
+      alert("All saved announcements have been deleted.");
+  }
+}
+
+// Function to view announcements (for now, just an alert)
+function viewAnnouncements() {
+  const announcements = document.getElementById("saved-announcements").value.trim();
+
+  if (!announcements) {
+      alert("No saved announcements to view.");
+  } else {
+      alert("Saved Announcements:\n\n" + announcements);
+  }
+}

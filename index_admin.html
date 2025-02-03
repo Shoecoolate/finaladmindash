@@ -107,14 +107,12 @@
             <textarea id="saved-announcements" readonly></textarea>
 
             <div class="announcement-actions">
-                <div class="post-dropdown">
-                    <button class="post-button" onclick="toggleDropdown()">Post ▼</button>
-                    <ul class="dropdown-menu" id="post-options">
-                        <li onclick="setPostOption('recent')">Post Recent</li>
-                        <li onclick="setPostOption('selected')">Post Selected</li>
-                        <li onclick="setPostOption('all')">Post All</li>
-                    </ul>
-                </div>
+                <select id="post-options">
+                    <option value="recent">Post Recent</option>
+                    <option value="selected">Post Selected</option>
+                    <option value="all">Post All</option>
+                </select>
+                <button class="post-button" onclick="postAnnouncement()">Post</button>
                 <button class="delete-button" onclick="deleteAnnouncement()">Delete</button>
                 <button class="view-button" onclick="viewAnnouncements()">View</button>
             </div>

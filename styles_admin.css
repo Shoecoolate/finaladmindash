@@ -227,20 +227,21 @@ button:hover {
 #work-hours {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
   text-align: center;
-  width: 80%;  /* Keep width as it is */
+  width: 80%;  
   max-width: 500px;
   height: 450px;
-  margin: 0; /* This will center the container horizontally */
   background-image: url('ojt photos/grey bg.png');
   background-size: cover;
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-left: 300px;
-  margin-top: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #work-hours h1 {

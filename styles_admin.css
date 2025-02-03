@@ -340,8 +340,8 @@ button:hover {
 /* Export to Excel Container (Centered) */
 .export-container {
   background-color: #5a1e1e; /* Dark Red */
-  width: 450px;
-  height: 250px;
+  width: 600px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -366,7 +366,7 @@ button:hover {
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  margin: 10px 0;
+  margin: 25px 0;
   transition: background 0.3s;
 }
 

@@ -42,7 +42,7 @@ body, html {
   position: fixed;
   top: 0;
   left: -300px;  /* Initially hidden */
-  width: 300px;
+  width: 260px;
   height: 100%;
   background-image: url('ojt photos/red1.jpg');
   background-size: cover;

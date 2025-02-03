@@ -182,10 +182,13 @@ button:hover {
 
 #log h1 {
   position: absolute;
-  top: 20px;  /* Position it below the top edge */
-  left: 60px; /* Position it to the right of the menu icon */
+  top: 40px; /* Keep it above the container */
+  left: 50%; /* Move to the center */
+  transform: translateX(-50%); /* Perfectly center it */
   font-size: 75px;
-  z-index: 0;  /* Lower z-index so the menu can cover it */
+  text-align: center;
+  width: auto; /* Keep the width only as wide as the text */
+  margin: 0; /* Remove any unwanted margin */
 
 }
 
@@ -213,18 +216,24 @@ button:hover {
 
 #attendance-list h1 {
   position: absolute;
-  top: 20px;  /* Position it below the top edge */
-  left: 60px; /* Position it to the right of the menu icon */
-  font-size: 32px;
-  z-index: 1;
+  top: 20px; /* Keep it above the container */
+  left: 50%; /* Move to the center */
+  transform: translateX(-50%); /* Perfectly center it */
+  font-size: 75px;
+  text-align: center;
+  width: auto;
+  margin: 0;
 }
 
 #attendance-list h2 {
   position: absolute;
-  top: 80px;  /* Position it below the h1 title */
-  left: 100px; /* Adjust as needed */
-  font-size: 27px;
-  z-index: 1;
+  top: 110px; /* Keep it below the title */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 40px;
+  text-align: center;
+  width: auto;
+  margin: 0;
 }
 
 #attendance-list {
@@ -389,11 +398,13 @@ button:hover {
 
 #export-excel h1 {
   position: absolute;
-  top: 20px;  /* Adjust as needed */
-  left: 60px; /* Push the text right to avoid menu overlap */
-  font-size: 32px;
-  font-weight: bold;
-  z-index: 1; /* Ensure it stays above other elements */
+  top: 20px; /* Keep it above the container */
+  left: 50%; /* Move to the center */
+  transform: translateX(-50%); /* Perfectly center it */
+  font-size: 75px;
+  text-align: center;
+  width: auto;
+  margin: 0;
 }
 
 /* Ensure containers are properly aligned below the title */

@@ -78,27 +78,32 @@
 
   <div id="attendance-list" class="screen" style="display: none;">
     <h1>Attendance List</h1>
-    <h2 id="attendance-list-header">Time log > By company</h2>
+    
+    <!-- Header Text -->
+    <h2 id="attendance-list-header">Time Log > By Company</h2>
   
-    <!-- Dropdown Menus and Go Button -->
-    <div class="attendance-dropdown-container">
-      <select id="attendance-type" onchange="updateAttendanceHeader()">
-        <option value="time-log">Time Log</option>
-        <option value="users-active">Users Active</option>
-        <option value="users-inactive">Users Inactive</option>
-      </select>
+    <!-- NEW: Wrapper for Dropdowns (Ensures it stays below the header) -->
+    <div class="attendance-dropdown-wrapper">
+      <div class="attendance-dropdown-container">
+        <select id="attendance-type" onchange="updateAttendanceHeader()">
+          <option value="time-log">Time Log</option>
+          <option value="users-active">Users Active</option>
+          <option value="users-inactive">Users Inactive</option>
+        </select>
   
-      <select id="attendance-company">
-        <option value="by-company">By Company</option>
-        <option value="lorem-ipsum-1">Lorem Ipsum 1</option>
-        <option value="lorem-ipsum-2">Lorem Ipsum 2</option>
-      </select>
+        <select id="attendance-company" onchange="updateAttendanceHeader()">
+          <option value="by-company">By Company</option>
+          <option value="lorem-ipsum-1">Lorem Ipsum 1</option>
+          <option value="lorem-ipsum-2">Lorem Ipsum 2</option>
+        </select>
   
-      <button class="go-button" onclick="filterAttendance()">Go</button>
+        <button class="go-button" onclick="filterAttendance()">Go</button>
+      </div>
     </div>
   
     <div id="attendance_rectangle"></div>
   </div>
+  
 
 
   

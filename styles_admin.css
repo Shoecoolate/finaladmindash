@@ -206,15 +206,15 @@ button:hover {
 }
 
 #attendance_rectangle {
-  width: 1000px;
+  width: 1200px;
   height: 500px; 
   background-color: #f0f0f0;
   border-radius: 15px;
   margin: 100px auto;
-  margin-top: 150px;
+  margin-top: 10px; /* Adjust the space above the white rectangle */
   margin-bottom: 50px;
-  overflow: hidden;  /* Prevent any overflow */
-  box-sizing: border-box;  /* Ensure padding is included in width/height */
+  overflow: hidden;
+  box-sizing: border-box;
   position: relative;
 }
 
@@ -234,7 +234,7 @@ button:hover {
   top: 110px; /* Keep it below the title */
   left: 50%;
   transform: translateX(-50%);
-  font-size: 40px;
+  font-size: 35px;
   text-align: center;
   width: auto;
   margin: 0;
@@ -523,17 +523,26 @@ button:hover {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Dropdown and Button Container */
+/* Adjust space below the dropdown */
+.attendance-dropdown-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 150px; /* Adds spacing below the header */
+  margin-bottom: 30px; /* Adjust this to control space below the dropdown */
+}
+
+/* Dropdown and Button Styling */
 .attendance-dropdown-container {
   display: flex;
   gap: 10px;
-  margin-top: 20px;
   justify-content: center; /* Center elements horizontally */
+  align-items: center; /* Align elements properly */
 }
 
 /* Dropdown Styling */
 .attendance-dropdown-container select {
-  padding: 8px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 14px;
@@ -543,7 +552,7 @@ button:hover {
 
 /* Go Button Styling */
 .go-button {
-  padding: 8px 16px;
+  padding: 10px 16px;
   background-color: #3498db;
   color: white;
   border: none;
@@ -556,3 +565,4 @@ button:hover {
 .go-button:hover {
   background-color: #2980b9;
 }
+

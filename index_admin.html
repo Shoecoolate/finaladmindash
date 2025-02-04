@@ -23,22 +23,10 @@
         <img src="ojt photos/log_icon.png" alt="Log">
         Log
       </li>
-      <li class="menu-item" onclick="toggleAttendanceMenu(event)">
+      <li class="menu-item" onclick="navigateTo('attendance-list')">
         <img src="ojt photos/attendance_icon.png" alt="Attendance List">
         Attendance List
-      </li>
-      
-      <!-- Attendance List Submenu (Hidden by Default) -->
-      <div id="attendance-submenu" class="submenu">
-        <ul>
-          <li class="submenu-item" onclick="showAttendanceContent('time-log')">Time Log</li>
-          <li class="submenu-item" onclick="showAttendanceContent('users-active')">Users Active</li>
-          <li class="submenu-item" onclick="showAttendanceContent('users-inactive')">Users Inactive</li>
-        </ul>
-      </div>
-      
-      
-      
+      </li>      
       <li class="menu-item" onclick="navigateTo('work-hours')">
         <img src="ojt photos/clock_icon.png" alt="Work Hours">
         Work Hours Preset
@@ -90,7 +78,25 @@
 
   <div id="attendance-list" class="screen" style="display: none;">
     <h1>Attendance List</h1>
-    <h2>Time log > By company</h2>
+    <h2 id="attendance-list-header">Time log > By company</h2>
+  
+    <!-- Dropdown Menus and Go Button -->
+    <div class="attendance-dropdown-container">
+      <select id="attendance-type" onchange="updateAttendanceHeader()">
+        <option value="time-log">Time Log</option>
+        <option value="users-active">Users Active</option>
+        <option value="users-inactive">Users Inactive</option>
+      </select>
+  
+      <select id="attendance-company">
+        <option value="by-company">By Company</option>
+        <option value="lorem-ipsum-1">Lorem Ipsum 1</option>
+        <option value="lorem-ipsum-2">Lorem Ipsum 2</option>
+      </select>
+  
+      <button class="go-button" onclick="filterAttendance()">Go</button>
+    </div>
+  
     <div id="attendance_rectangle"></div>
   </div>
 

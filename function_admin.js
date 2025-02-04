@@ -95,61 +95,38 @@ function viewAnnouncements() {
   }
 }
 
-// Toggle Main Menu
-function toggleMenu() {
-  const menu = document.getElementById('menu');
-  if (menu.style.left === '0px') {
-    menu.style.left = '-300px';
-  } else {
-    menu.style.left = '0px';
+
+
+// Update the "Time log > By company" text when selecting from dropdowns
+function updateAttendanceHeader() {
+  const type = document.getElementById("attendance-type").value;
+  const company = document.getElementById("attendance-company").value;
+  
+  let typeText = "Time Log";
+  if (type === "users-active") {
+    typeText = "Users Active";
+  } else if (type === "users-inactive") {
+    typeText = "Users Inactive";
   }
 
-  // Always close the Attendance submenu when toggling main menu
-  document.getElementById('attendance-submenu').style.display = 'none';
-}
-
-// Toggle Attendance List Submenu
-function toggleAttendanceMenu(event) {
-  event.stopPropagation(); // Prevents menu from closing immediately
-  const submenu = document.getElementById('attendance-submenu');
-
-  // Close all other menus before opening this one
-  closeAllMenus();
-
-  // Toggle submenu visibility
-  submenu.style.display = (submenu.style.display === 'block') ? 'none' : 'block';
-}
-
-// Show Attendance List Page and Update Content
-function showAttendanceContent(contentType) {
-  navigateTo('attendance-list');
-
-  let headerText = "Attendance List";
-  if (contentType === "time-log") {
-    headerText = "Time Log";
-  } else if (contentType === "users-active") {
-    headerText = "Users Active";
-  } else if (contentType === "users-inactive") {
-    headerText = "Users Inactive";
+  let companyText = "By Company";
+  if (company === "lorem-ipsum-1") {
+    companyText = "Lorem Ipsum 1";
+  } else if (company === "lorem-ipsum-2") {
+    companyText = "Lorem Ipsum 2";
   }
 
-  document.getElementById('attendance-list-header').innerText = headerText;
-
-  // Hide submenu after selection
-  document.getElementById('attendance-submenu').style.display = 'none';
+  // Update the header immediately when selection changes
+  document.getElementById("attendance-list-header").innerText = `${typeText} > ${companyText}`;
 }
 
-// Close all menus
-function closeAllMenus() {
-  document.getElementById('attendance-submenu').style.display = 'none';
+// Attach the function to dropdowns to update in real time
+document.getElementById("attendance-type").addEventListener("change", updateAttendanceHeader);
+document.getElementById("attendance-company").addEventListener("change", updateAttendanceHeader);
+
+
+// Filter attendance based on dropdown selections
+function filterAttendance() {
+  updateAttendanceHeader();
+  alert("Filtering attendance for: " + document.getElementById("attendance-list-header").innerText);
 }
-
-// Hide submenu when clicking outside or selecting an item
-document.addEventListener('click', function (event) {
-  const submenu = document.getElementById('attendance-submenu');
-
-  // If the submenu is open and the click is outside OR inside a submenu item, close it
-  if (submenu.style.display === 'block' && !submenu.contains(event.target)) {
-    submenu.style.display = 'none';
-  }
-});

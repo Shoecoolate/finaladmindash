@@ -190,6 +190,7 @@ button:hover {
   left: 100px; /* Move to the center */
   font-size: 75px;
   text-align: center;
+  margin-top: 80px;
   
 }
 
@@ -421,6 +422,7 @@ button:hover {
 #announcement h1{
   font-size: 75px;
   margin-bottom: -40px;
+  margin-top: 40px;
 }
 
 /* Arrange containers side by side */

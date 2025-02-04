@@ -385,7 +385,7 @@ button:hover {
 /* Export Buttons */
 .export-button {
   background-color: white;
-  color: black;
+  color: white;
   border: none;
   padding: 15px 40px;
   border-radius: 50px;

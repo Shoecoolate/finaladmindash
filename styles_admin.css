@@ -188,7 +188,6 @@ button:hover {
 #log h1 {
   top: 40px; /* Keep it above the container */
   left: 100px; /* Move to the center */
-  transform: translateX(-50%); /* Perfectly center it */
   font-size: 75px;
   text-align: center;
   
@@ -521,3 +520,37 @@ button:hover {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
+
+/* Submenu Styling */
+.submenu {
+  display: none;
+  position: absolute;
+  left: 260px; /* Adjust to align next to the main menu */
+  top: 100px; /* Adjust to align below "Attendance List" */
+  width: 200px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 15px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-radius: 5px;
+}
+
+.submenu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.submenu-item {
+  padding: 12px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 5px 0;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.submenu-item:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+

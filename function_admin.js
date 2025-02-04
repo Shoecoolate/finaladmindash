@@ -94,3 +94,62 @@ function viewAnnouncements() {
       alert("Saved Announcements:\n\n" + announcements);
   }
 }
+
+// Toggle Main Menu
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  if (menu.style.left === '0px') {
+    menu.style.left = '-300px';
+  } else {
+    menu.style.left = '0px';
+  }
+
+  // Always close the Attendance submenu when toggling main menu
+  document.getElementById('attendance-submenu').style.display = 'none';
+}
+
+// Toggle Attendance List Submenu
+function toggleAttendanceMenu(event) {
+  event.stopPropagation(); // Prevents menu from closing immediately
+  const submenu = document.getElementById('attendance-submenu');
+
+  // Close all other menus before opening this one
+  closeAllMenus();
+
+  // Toggle submenu visibility
+  submenu.style.display = (submenu.style.display === 'block') ? 'none' : 'block';
+}
+
+// Show Attendance List Page and Update Content
+function showAttendanceContent(contentType) {
+  navigateTo('attendance-list');
+
+  let headerText = "Attendance List";
+  if (contentType === "time-log") {
+    headerText = "Time Log";
+  } else if (contentType === "users-active") {
+    headerText = "Users Active";
+  } else if (contentType === "users-inactive") {
+    headerText = "Users Inactive";
+  }
+
+  document.getElementById('attendance-list-header').innerText = headerText;
+
+  // Hide submenu after selection
+  document.getElementById('attendance-submenu').style.display = 'none';
+}
+
+// Close all menus
+function closeAllMenus() {
+  document.getElementById('attendance-submenu').style.display = 'none';
+}
+
+// Hide submenu when clicking outside or selecting an item
+document.addEventListener('click', function (event) {
+  const submenu = document.getElementById('attendance-submenu');
+
+  // If the submenu is open and the click is outside OR inside a submenu item, close it
+  if (submenu.style.display === 'block' && !submenu.contains(event.target)) {
+    submenu.style.display = 'none';
+  }
+});

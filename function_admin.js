@@ -76,13 +76,22 @@ function postAnnouncement() {
   alert(`Posting announcements: ${selectedOption}`);
 }
 
-// Function to delete saved announcements
 function deleteAnnouncement() {
-  if (confirm("Are you sure you want to delete all saved announcements?")) {
-      document.getElementById("saved-announcements").value = "";
-      alert("All saved announcements have been deleted.");
+  const savedAnnouncements = document.getElementById("saved-announcements");
+  const selectedText = window.getSelection().toString(); // Get selected text
+
+  if (!selectedText) {
+      alert("Please select an announcement to delete.");
+      return;
+  }
+
+  if (confirm("Are you sure you want to delete the selected announcement?")) {
+      // Replace only the selected text with an empty string
+      savedAnnouncements.value = savedAnnouncements.value.replace(selectedText, "").trim();
+      alert("Selected announcement deleted.");
   }
 }
+
 
 // Function to view announcements (for now, just an alert)
 function viewAnnouncements() {

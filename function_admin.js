@@ -97,11 +97,13 @@ function viewAnnouncements() {
 
 
 
-// Update the "Time log > By company" text when selecting from dropdowns
+// Store the header text without displaying it in the HTML
+let attendanceHeaderText = "Time Log > By Company";
+
 function updateAttendanceHeader() {
   const type = document.getElementById("attendance-type").value;
   const company = document.getElementById("attendance-company").value;
-  
+
   let typeText = "Time Log";
   if (type === "users-active") {
     typeText = "Users Active";
@@ -116,17 +118,15 @@ function updateAttendanceHeader() {
     companyText = "Lorem Ipsum 2";
   }
 
-  // Update the header immediately when selection changes
-  document.getElementById("attendance-list-header").innerText = `${typeText} > ${companyText}`;
+  // Store the text instead of updating an HTML element
+  attendanceHeaderText = `${typeText} > ${companyText}`;
 }
 
-// Attach the function to dropdowns to update in real time
+// Ensure dropdown selections update the stored header text
 document.getElementById("attendance-type").addEventListener("change", updateAttendanceHeader);
 document.getElementById("attendance-company").addEventListener("change", updateAttendanceHeader);
 
-
-// Filter attendance based on dropdown selections
+// Keep the filtering message when clicking "Go"
 function filterAttendance() {
-  updateAttendanceHeader();
-  alert("Filtering attendance for: " + document.getElementById("attendance-list-header").innerText);
+  alert("Filtering attendance for: " + attendanceHeaderText);
 }

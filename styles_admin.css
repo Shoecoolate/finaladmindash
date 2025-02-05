@@ -229,16 +229,6 @@ button:hover {
   margin: 0;
 }
 
-#attendance-list h2 {
-  position: absolute;
-  top: 110px; /* Keep it below the title */
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 35px;
-  text-align: center;
-  width: auto;
-  margin: 0;
-}
 
 #attendance-list {
   display: flex;

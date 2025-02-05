@@ -576,3 +576,22 @@ button:hover {
   transform: scale(1.1);
 }
 
+/* Sign Out Button Styling */
+#sign-out-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #e74c3c; /* Red Color */
+  color: black;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#sign-out-button:hover {
+  background-color: #c0392b; /* Darker Red */
+}
+

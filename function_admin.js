@@ -168,3 +168,4 @@ document.getElementById("attendance-company").addEventListener("change", updateA
 function filterAttendance() {
   alert("Filtering attendance for: " + attendanceHeaderText);
 }
+

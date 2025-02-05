@@ -220,7 +220,7 @@ button:hover {
 
 #attendance-list h1 {
   position: absolute;
-  top: 20px; /* Keep it above the container */
+  top: 70px; /* Keep it above the container */
   left: 50%; /* Move to the center */
   transform: translateX(-50%); /* Perfectly center it */
   font-size: 75px;
@@ -554,5 +554,25 @@ button:hover {
 
 .go-button:hover {
   background-color: #2980b9;
+}
+
+.dashboard-icon-top-right {
+  position: fixed; /* Fix it to the screen */
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it's above everything */
+  transition: transform 0.2s;
+}
+
+.dashboard-icon-top-right img {
+  width: 100%;
+  height: auto;
+}
+
+.dashboard-icon-top-right:hover {
+  transform: scale(1.1);
 }
 

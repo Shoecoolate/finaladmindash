@@ -8,25 +8,33 @@ function toggleMenu() {
   }
 }
 
-// Navigation Functionality
 function navigateTo(screenId) {
-  document.querySelectorAll('.screen').forEach(screen => {
-    screen.style.display = 'none';
-  });
+    document.querySelectorAll('.screen').forEach(screen => {
+        screen.style.display = 'none';
+    });
 
-  const activeScreen = document.getElementById(screenId);
-  if (activeScreen) {
-    activeScreen.style.display = 'flex';
-  }
+    const activeScreen = document.getElementById(screenId);
+    if (activeScreen) {
+        activeScreen.style.display = 'flex';
+    }
 
-  // Hide menu if open
-  document.getElementById('menu').style.left = '-300px';
+    // Hide menu if open
+    document.getElementById('menu').style.left = '-300px';
+
+    // Show/hide the dashboard shortcut icon based on the active page
+    const dashboardShortcut = document.getElementById('dashboard-shortcut');
+    if (screenId === 'dashboard') {
+        dashboardShortcut.style.display = 'none'; // Hide on dashboard
+    } else {
+        dashboardShortcut.style.display = 'block'; // Show on other pages
+    }
 }
 
 // Show Dashboard on page load
 document.addEventListener("DOMContentLoaded", function () {
-  navigateTo('dashboard');
+    navigateTo('dashboard'); // Load dashboard and hide shortcut on start
 });
+
 
 // Work Hours Functions
 function addWorkHours() {

@@ -71,17 +71,39 @@ function saveAnnouncement() {
   alert("Announcement saved successfully.");
 }
 
+// Store the latest posted announcement
+let latestPostedAnnouncement = "";
+
 // Function to post announcement
 function postAnnouncement() {
-  const selectedOption = document.getElementById("post-options").value;
-  const announcements = document.getElementById("saved-announcements").value.trim();
+    const selectedOption = document.getElementById("post-options").value;
+    const savedAnnouncements = document.getElementById("saved-announcements").value.trim().split("\n\n");
 
-  if (!announcements) {
-      alert("No saved announcements available.");
-      return;
-  }
+    if (!savedAnnouncements.length || savedAnnouncements[0] === "") {
+        alert("No saved announcements available.");
+        return;
+    }
 
-  alert(`Posting announcements: ${selectedOption}`);
+    if (selectedOption === "recent") {
+        // Store only the most recent announcement
+        latestPostedAnnouncement = savedAnnouncements[savedAnnouncements.length - 1];
+
+    } else if (selectedOption === "selected") {
+        // Store only the selected text
+        const selectedText = window.getSelection().toString().trim();
+        if (!selectedText) {
+            alert("Please select an announcement to post.");
+            return;
+        }
+        latestPostedAnnouncement = selectedText;
+
+    } else if (selectedOption === "all") {
+        // Store all announcements
+        latestPostedAnnouncement = savedAnnouncements.join("\n\n");
+    }
+
+    // Keep the prompt the same
+    alert(`Posting announcements: ${selectedOption}`);
 }
 
 function deleteAnnouncement() {
@@ -101,15 +123,14 @@ function deleteAnnouncement() {
 }
 
 
-// Function to view announcements (for now, just an alert)
+// Function to view announcements (only shows the latest posted one)
 function viewAnnouncements() {
-  const announcements = document.getElementById("saved-announcements").value.trim();
-
-  if (!announcements) {
+  if (!latestPostedAnnouncement) {
       alert("No saved announcements to view.");
-  } else {
-      alert("Saved Announcements:\n\n" + announcements);
+      return;
   }
+
+  alert(`Saved Announcements:\n\n${latestPostedAnnouncement}`);
 }
 
 

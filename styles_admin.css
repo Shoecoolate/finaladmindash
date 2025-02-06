@@ -162,15 +162,11 @@ button, input, select, textarea {
   margin-top: 10px;
   padding: 10px;
   border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   font-size: 16px;
 }
 
-button {
-  background: linear-gradient(135deg, #3498db, #2980b9);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
 button:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 15px rgba(190, 99, 100, 0.8);
@@ -341,7 +337,7 @@ button:hover {
 
 .save-button {
   padding: 10px 20px;
-  background-color: #2ecc71;
+  background-color: #2980b9;
   color: white;
   border: none;
   border-radius: 5px;
@@ -350,7 +346,7 @@ button:hover {
 }
 
 .save-button:hover {
-  background-color: #27ae60;
+  background-color: #2980b9;
 }
 
 /* Export to Excel Container (Centered) */
@@ -374,7 +370,7 @@ button:hover {
 
 /* Export Buttons */
 .export-button {
-  background-color: white;
+  background-color: #2980b9;
   color: white;
   border: none;
   padding: 15px 40px;
@@ -387,7 +383,7 @@ button:hover {
 }
 
 .export-button:hover {
-  background-color: #ddd;
+  background-color: #2980b9;
 }
 
 #export-excel h1 {
@@ -475,13 +471,13 @@ button:hover {
 
 /* Post Button */
 .post-button {
-  background-color: #3498db;
+  padding: 10px 20px;
+  background-color: #2980b9;
   color: white;
-  padding: 8px;
   border: none;
   border-radius: 5px;
-  font-size: 14px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .post-button:hover {
@@ -490,21 +486,31 @@ button:hover {
 
 /* Delete and View Buttons */
 .delete-button {
-  background-color: #e74c3c;
+  padding: 10px 20px;
+  background-color: #2980b9;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .delete-button:hover {
-  background-color: #c0392b;
+  background-color: #2980b9;
 }
 
 .view-button {
-  background-color: #2ecc71;
+  padding: 10px 20px;
+  background-color: #2980b9;
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .view-button:hover {
-  background-color: #27ae60;
+  background-color: #2980b9;
 }
 
 .dashboard-icon, .announcement-container, .work-hours-content, .export-container {
@@ -542,14 +548,13 @@ button:hover {
 
 /* Go Button Styling */
 .go-button {
-  padding: 10px 16px;
-  background-color: #3498db;
+  padding: 10px 20px;
+  background-color: #2980b9;
   color: white;
   border: none;
   border-radius: 5px;
-  font-size: 14px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 
 .go-button:hover {
@@ -581,7 +586,8 @@ button:hover {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #e74c3c; /* Red Color */
+  background-color: #ffffff; /* Red Color */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   color: black;
   padding: 12px 20px;
   font-size: 16px;
@@ -592,6 +598,5 @@ button:hover {
 }
 
 #sign-out-button:hover {
-  background-color: #c0392b; /* Darker Red */
+  background-color: #b92929; /* Darker Red */
 }
-

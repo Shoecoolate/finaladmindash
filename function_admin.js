@@ -8,6 +8,8 @@ function toggleMenu() {
   }
 }
 
+let lastVisitedSection = 'dashboard'; // Default to dashboard
+
 function navigateTo(screenId) {
     document.querySelectorAll('.screen').forEach(screen => {
         screen.style.display = 'none';
@@ -17,6 +19,9 @@ function navigateTo(screenId) {
     if (activeScreen) {
         activeScreen.style.display = 'flex';
     }
+
+    // Update the last visited section
+    lastVisitedSection = screenId;
 
     // Hide menu if open
     document.getElementById('menu').style.left = '-300px';
@@ -35,6 +40,10 @@ document.addEventListener("DOMContentLoaded", function () {
     navigateTo('dashboard'); // Load dashboard and hide shortcut on start
 });
 
+// Redirect to the last visited section when clicking the dashboard icon
+document.getElementById('dashboard-shortcut').addEventListener('click', function() {
+    navigateTo(lastVisitedSection);
+});
 
 // Work Hours Functions
 function addWorkHours() {
@@ -57,6 +66,7 @@ function saveWorkHours() {
     alert("Please enter a grace period.");
   }
 }
+
 // Function to save announcement
 function saveAnnouncement() {
   const announcementText = document.getElementById("announcement-text").value;
@@ -122,7 +132,6 @@ function deleteAnnouncement() {
   }
 }
 
-
 // Function to view announcements (only shows the latest posted one)
 function viewAnnouncements() {
   if (!latestPostedAnnouncement) {
@@ -132,8 +141,6 @@ function viewAnnouncements() {
 
   alert(`Saved Announcements:\n\n${latestPostedAnnouncement}`);
 }
-
-
 
 // Store the header text without displaying it in the HTML
 let attendanceHeaderText = "Time Log > By Company";
@@ -168,4 +175,3 @@ document.getElementById("attendance-company").addEventListener("change", updateA
 function filterAttendance() {
   alert("Filtering attendance for: " + attendanceHeaderText);
 }
-

@@ -600,3 +600,24 @@ button:hover {
 #sign-out-button:hover {
   background-color: #b92929; /* Darker Red */
 }
+
+/* Default option (By company, By department) should always be black */
+#attendance-company option.default-option,
+#attendance-department option.default-option {
+  color: black !important; /* Black text */
+  font-weight: bold; /* Make it stand out */
+}
+
+/* Ensure other options appear gray */
+#attendance-company option,
+#attendance-department option {
+  color: gray;
+}
+
+/* Force selected option to turn black when chosen */
+#attendance-company option:checked,
+#attendance-department option:checked {
+  color: black !important;
+}
+
+

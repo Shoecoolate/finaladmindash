@@ -37,7 +37,20 @@ function navigateTo(screenId) {
 
 // Show Dashboard on page load
 document.addEventListener("DOMContentLoaded", function () {
-    navigateTo('dashboard'); // Load dashboard and hide shortcut on start
+  const dropdowns = document.querySelectorAll("select");
+
+  dropdowns.forEach(select => {
+      select.addEventListener("change", function () {
+          let options = this.options;
+          for (let i = 0; i < options.length; i++) {
+              if (options[i].selected) {
+                  options[i].style.color = "black"; // Selected option turns black
+              } else {
+                  options[i].style.color = "gray"; // Unselected options remain gray
+              }
+          }
+      });
+  });
 });
 
 // Redirect to the last visited section when clicking the dashboard icon
@@ -171,7 +184,75 @@ function updateAttendanceHeader() {
 document.getElementById("attendance-type").addEventListener("change", updateAttendanceHeader);
 document.getElementById("attendance-company").addEventListener("change", updateAttendanceHeader);
 
-// Keep the filtering message when clicking "Go"
+// Update the filter function to show the selected options in a prompt with the correct format
 function filterAttendance() {
-  alert("Filtering attendance for: " + attendanceHeaderText);
+  const type = document.getElementById("attendance-type").value; // Correctly get the type
+  const company = document.getElementById("attendance-company").value; // Get the company value
+  const department = document.getElementById("attendance-department").value; // Get the department value
+  
+  // Define the options for each dropdown
+  const typeOptions = {
+    "time-log": "Time Log",
+    "users-active": "Users Active",
+    "users-inactive": "Users Inactive"
+  };
+  
+  const companyOptions = {
+    "agridom": "Agridom Solutions Corp.",
+    "farmtech": "Farmtech Agriland Corporation",
+    "subang": "Subang Farm",
+    "djas": "DJAS Servitrade Corporation",
+    "agri-online": "AGRI Online",
+    "sunfood": "Sunfood Marketing Inc.",
+    "all": "All companies"
+  };
+
+  const departmentOptions = {
+    "all": "All departments",
+    "hr": "Human Resources",
+    "it": "IT Department",
+    "finance": "Finance"
+  };
+
+  // Get the selected text for each dropdown option
+  const selectedType = typeOptions[type] || "Time Log";
+  const selectedCompany = companyOptions[company] || "All companies";
+  const selectedDepartment = departmentOptions[department] || "All departments";
+  
+  // Generate the filter text
+  const filterText = `Filtering attendance for:\n${selectedType} > ${selectedCompany} > ${selectedDepartment}`;
+
+  // Show the filter information in a prompt
+  alert(filterText);
 }
+
+// Apply the gray styling for unselected options
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdowns = document.querySelectorAll("select");
+
+  dropdowns.forEach(select => {
+      select.addEventListener("change", function () {
+          let options = this.options;
+          for (let i = 0; i < options.length; i++) {
+              if (options[i].selected) {
+                  options[i].style.color = "black"; // Selected option turns black
+              } else {
+                  options[i].style.color = "gray"; // Unselected options remain gray
+              }
+          }
+      });
+  });
+
+  // Apply initial gray color to options when the page loads
+  dropdowns.forEach(select => {
+      let options = select.options;
+      for (let i = 0; i < options.length; i++) {
+          options[i].style.color = "gray"; // Make all options gray initially
+      }
+      // Set the selected option color to black
+      const selectedOption = select.querySelector("option:checked");
+      if (selectedOption) {
+          selectedOption.style.color = "black";
+      }
+  });
+});

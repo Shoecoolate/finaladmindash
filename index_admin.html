@@ -12,39 +12,35 @@
     <img src="ojt photos/menu_icon.png" alt="Menu Icon">
   </div>
 
-  <!-- Menu Pop-Up -->
-  <div class="menu" id="menu">
-    <ul>
-      <li class="menu-item" onclick="navigateTo('dashboard')">
-        <img src="ojt photos/dashboard_icon.png" alt="Dashboard">
-        Dashboard
-      </li>
-      <li class="menu-item" onclick="navigateTo('log')">
-        <img src="ojt photos/log_icon.png" alt="Log">
-        Log
-      </li>
-      <li class="menu-item" onclick="navigateTo('attendance-list')">
-        <img src="ojt photos/attendance_icon.png" alt="Attendance List">
-        Attendance List
-      </li>      
-      <li class="menu-item" onclick="navigateTo('work-hours')">
-        <img src="ojt photos/clock_icon.png" alt="Work Hours">
-        Work Hours Preset
-      </li>
-      <li class="menu-item" onclick="navigateTo('announcement')">
-        <img src="ojt photos/announcement_icon.png" alt="Announcement">
-        Announcement
-      </li>
-      <li class="menu-item" onclick="navigateTo('export-excel')">
-        <img src="ojt photos/excel_icon.png" alt="Export Excel">
-        Export Excel
-      </li>
-      <li class="menu-item" onclick="navigateTo('leave-approval')">
-        <img src="ojt photos/leave_icon.png" alt="Leave Approval">
-        Leave Approval
-      </li>
-    </ul>
-  </div>
+<!-- Menu Pop-Up -->
+<div class="menu" id="menu">
+  <ul>
+    <li class="menu-item" onclick="navigateTo('dashboard')">
+      <img src="ojt photos/dashboard_icon.png" alt="Dashboard"> Dashboard
+    </li>
+    <li class="menu-item" onclick="navigateTo('log')">
+      <img src="ojt photos/log_icon.png" alt="Log"> Log
+    </li>
+    <li class="menu-item" onclick="navigateTo('attendance-list')">
+      <img src="ojt photos/attendance_icon.png" alt="Attendance List"> Attendance List
+    </li>
+    <li class="menu-item" onclick="navigateTo('work-hours')">
+      <img src="ojt photos/clock_icon.png" alt="Work Hours"> Work Hours Preset
+    </li>
+    <li class="menu-item" onclick="navigateTo('announcement')">
+      <img src="ojt photos/announcement_icon.png" alt="Announcement"> Announcement
+    </li>
+    <li class="menu-item" onclick="navigateTo('export-excel')">
+      <img src="ojt photos/excel_icon.png" alt="Export Excel"> Export Excel
+    </li>
+    <li class="menu-item" onclick="navigateTo('leave-approval')">
+      <img src="ojt photos/leave_icon.png" alt="Leave Approval"> Leave Approval
+    </li>
+    <!-- Sign Out Text Link -->
+    <li class="menu-item sign-out-text" onclick="signOut()">Sign Out</li>
+  </ul>
+</div> <!-- End of Menu Pop-Up -->
+
 
 <!-- Back and Forward Buttons (Updated Icons) -->
 <div id="dashboard-shortcut" class="dashboard-icon-top-right" style="display: none;">
@@ -185,9 +181,5 @@
 </div>
 
 <script src="function_admin.js"></script>
-
-<!-- Sign Out Button -->
-<button id="sign-out-button" onclick="signOut()">Sign Out</button>
-
 </body>
 </html>

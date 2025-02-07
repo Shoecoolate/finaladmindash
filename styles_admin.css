@@ -91,6 +91,21 @@ h1, h2 {
   height: 30px;
 }
 
+/* Style for Sign Out Text Link in Menu */
+.menu-item.sign-out-text {
+  margin-top: auto; /* Pushes it to the bottom of the menu */
+  text-align: center; /* Centers the text */
+  color: #b92929; /* Dark Red Font */
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-item.sign-out-text:hover {
+  color: #a11818; /* Darker red on hover */
+}
+
+
 /* Screens */
 .screen {
   display: none; /* Hidden initially */
@@ -628,28 +643,6 @@ button:hover {
   top: 20px; 
   right: 40px;
   z-index: 1000; /* Ensure the icons are above the content */
-}
-
-
-
-/* Sign Out Button Styling */
-#sign-out-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #ffffff; /* Red Color */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  color: black;
-  padding: 12px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-#sign-out-button:hover {
-  background-color: #b92929; /* Darker Red */
 }
 
 /* Default option (By company, By department) should always be black */

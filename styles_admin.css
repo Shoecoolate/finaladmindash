@@ -564,7 +564,7 @@ button:hover {
 .dashboard-icon-top-right {
   position: fixed; /* Fix it to the screen */
   top: 20px;
-  right: 20px;
+  right: 40px;
   width: 50px;
   height: 50px;
   cursor: pointer;
@@ -573,7 +573,7 @@ button:hover {
 }
 
 .dashboard-icon-top-right img {
-  width: 100%;
+  width: 60%;
   height: auto;
 }
 
@@ -620,4 +620,36 @@ button:hover {
   color: black !important;
 }
 
+#leave-approval h1 {
+  font-size: 100px;
 
+}
+
+#leave-approval {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  overflow: hidden;
+  margin-top: -40px;
+}
+
+#leave-approval h1 {
+  top: 40px; /* Keep it above the container */
+  left: 100px; /* Move to the center */
+  font-size: 75px;
+  text-align: center;
+  margin-top: 80px;
+  
+}
+
+#leave-approval_rectangle {
+  width: 700px;
+  justify-content: center;
+  height: 500px; 
+  background-color: #f0f0f0;
+  
+  border-radius: 15px;
+  overflow: hidden;  /* Prevent any overflow */
+  box-sizing: border-box;  /* Ensure padding is included in width/height */
+}

@@ -52,36 +52,56 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-let navigationHistory = []; // Stack to track visited pages
+// Define the ordered menu navigation (matches sidebar order)
+const menuOrder = [
+  "dashboard",
+  "log",
+  "attendance-list",
+  "work-hours",
+  "announcement",
+  "export-excel",
+  "leave-approval"
+];
 
+// Store the currently active screen
+let currentScreen = "dashboard"; 
+
+// Function to navigate to a screen
 function navigateTo(screenId) {
-    const activeScreen = document.querySelector('.screen[style*="display: flex;"]');
+  // Hide all screens first
+  document.querySelectorAll('.screen').forEach(screen => {
+      screen.style.display = 'none';
+  });
 
-    if (activeScreen) {
-        let activeScreenId = activeScreen.id;
-        if (activeScreenId !== screenId) {
-            navigationHistory.push(activeScreenId); // Push current page before switching
-        }
-    }
+  // Show the selected screen
+  const activeScreen = document.getElementById(screenId);
+  if (activeScreen) {
+      activeScreen.style.display = 'flex';
+      currentScreen = screenId; // Update the current screen
+  }
 
-    document.querySelectorAll('.screen').forEach(screen => {
-        screen.style.display = 'none';
-    });
+  // Hide menu when a screen is selected
+  document.getElementById('menu').style.left = '-300px';
 
-    document.getElementById(screenId).style.display = 'flex';
-
-    // Show back button only if history is not empty
-    document.getElementById('dashboard-shortcut').style.display = navigationHistory.length > 0 ? 'block' : 'none';
+  // Show/hide the back button based on current screen
+  const dashboardShortcut = document.getElementById('dashboard-shortcut');
+  dashboardShortcut.style.display = (screenId === "dashboard") ? "none" : "block";
 }
 
-// Back button function (pops from history stack in correct reverse order)
+// Function to handle back navigation based on menu order
 document.getElementById('dashboard-shortcut').addEventListener('click', function () {
-    if (navigationHistory.length > 0) {
-        let lastPage = navigationHistory.pop(); // Remove last page from stack
-        navigateTo(lastPage);
-    }
+  let currentIndex = menuOrder.indexOf(currentScreen);
+  
+  if (currentIndex > 0) {
+      let previousScreen = menuOrder[currentIndex - 1]; // Get the previous screen in the list
+      navigateTo(previousScreen);
+  }
 });
 
+// Show Dashboard on page load
+document.addEventListener("DOMContentLoaded", function () {
+  navigateTo("dashboard");
+});
 
 
 

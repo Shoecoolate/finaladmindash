@@ -561,25 +561,76 @@ button:hover {
   background-color: #2980b9;
 }
 
-.dashboard-icon-top-right {
-  position: fixed; /* Fix it to the screen */
+/* Right Arrow (Fixed Position) */
+.dashboard-icon-nav {
+  position: fixed;
   top: 20px;
-  right: 40px;
-  width: 50px;
-  height: 50px;
+  z-index: 1000;
   cursor: pointer;
-  z-index: 1000; /* Ensure it's above everything */
   transition: transform 0.2s;
 }
 
-.dashboard-icon-top-right img {
-  width: 60%;
+#dashboard-shortcut-left {
+  left: 40px; /* Adjust the left position */
+}
+
+#dashboard-shortcut-right {
+  right: 40px; /* Adjust the right position */
+}
+
+.dashboard-icon-nav img {
+  width: 30px;
   height: auto;
 }
 
-.dashboard-icon-top-right:hover {
+.dashboard-icon-nav:hover {
   transform: scale(1.1);
 }
+
+/* Ensure both the left and right arrows are in fixed positions, side by side */
+.dashboard-icon-top-right {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  z-index: 1000;
+  cursor: pointer;
+  display: flex; /* Use flexbox to align the icons horizontally */
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px; /* Space between the left and right arrows */
+}
+
+/* Adjust icon sizes */
+.dashboard-icon-top-right img {
+  width: 30px;
+  height: auto;
+}
+
+/* Hover effect for icons */
+.dashboard-icon-top-right img:hover {
+  transform: scale(1.1);
+}
+
+
+.dashboard-icon-top-right img:first-child {
+  margin-right: 10px; /* Space between the left and right arrows */
+}
+
+.dashboard-icon-top-right img:last-child {
+  margin-left: 10px; /* Space between the left and right arrows */
+}
+
+/* Ensure the arrows stay in place when navigating */
+#dashboard-shortcut {
+  display: flex; /* Align both arrows */
+  justify-content: center;
+  position: fixed;
+  top: 20px; 
+  right: 40px;
+  z-index: 1000; /* Ensure the icons are above the content */
+}
+
+
 
 /* Sign Out Button Styling */
 #sign-out-button {

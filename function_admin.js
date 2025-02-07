@@ -8,7 +8,6 @@ function toggleMenu() {
   }
 }
 
-let lastVisitedSection = 'dashboard'; // Default to dashboard
 
 function navigateTo(screenId) {
     document.querySelectorAll('.screen').forEach(screen => {
@@ -53,10 +52,39 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Redirect to the last visited section when clicking the dashboard icon
-document.getElementById('dashboard-shortcut').addEventListener('click', function() {
-    navigateTo(lastVisitedSection);
+let navigationHistory = []; // Stack to track visited pages
+
+function navigateTo(screenId) {
+    const activeScreen = document.querySelector('.screen[style*="display: flex;"]');
+
+    if (activeScreen) {
+        let activeScreenId = activeScreen.id;
+        if (activeScreenId !== screenId) {
+            navigationHistory.push(activeScreenId); // Push current page before switching
+        }
+    }
+
+    document.querySelectorAll('.screen').forEach(screen => {
+        screen.style.display = 'none';
+    });
+
+    document.getElementById(screenId).style.display = 'flex';
+
+    // Show back button only if history is not empty
+    document.getElementById('dashboard-shortcut').style.display = navigationHistory.length > 0 ? 'block' : 'none';
+}
+
+// Back button function (pops from history stack in correct reverse order)
+document.getElementById('dashboard-shortcut').addEventListener('click', function () {
+    if (navigationHistory.length > 0) {
+        let lastPage = navigationHistory.pop(); // Remove last page from stack
+        navigateTo(lastPage);
+    }
 });
+
+
+
+
 
 // Work Hours Functions
 function addWorkHours() {

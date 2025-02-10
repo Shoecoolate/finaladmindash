@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
 // Define the ordered menu navigation (matches sidebar order)
 const menuOrder = [
   "dashboard",

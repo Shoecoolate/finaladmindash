@@ -49,8 +49,36 @@
 </div>
 
 <!-- Screens -->
+<!-- Dashboard -->
 <div id="dashboard" class="screen" style="display: flex;">
   <h1 id="dashboard_title">Dashboard</h1>
+
+  <div class="dashboard-stats-container">
+      <!-- Total User Time In Container -->
+      <div class="total-user-time-container">
+          <h2>Total User Time In:</h2>
+          <p id="total-time-in">0</p>
+      </div>
+
+      <!-- Top 5 Late Employees Container -->
+      <div class="top-late-employees-container">
+          <h2>Top 5 Late Employees:</h2>
+          <div class="late-employees-list">
+              <p>(Big space for names)</p>
+          </div>
+          <p class="total-late-employees">Total Number of Late Employees: <span id="total-late-count">0</span></p>
+          <button class="view-late-button" onclick="viewLateEmployees()">View Late Employees</button>
+      </div>
+      <div class="top-early-birds-container">
+        <h2>Top 5 Early Birds:</h2>
+        <div class="early-birds-list">
+            <p>(Big space for names)</p>
+        </div>
+    </div>
+    
+  </div>
+</div>
+
 
 </div>
 

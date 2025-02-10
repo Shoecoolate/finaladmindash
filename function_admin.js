@@ -25,13 +25,6 @@ function navigateTo(screenId) {
     // Hide menu if open
     document.getElementById('menu').style.left = '-300px';
 
-    // Show/hide the dashboard shortcut icon based on the active page
-    const dashboardShortcut = document.getElementById('dashboard-shortcut');
-    if (screenId === 'dashboard') {
-        dashboardShortcut.style.display = 'none'; // Hide on dashboard
-    } else {
-        dashboardShortcut.style.display = 'block'; // Show on other pages
-    }
 }
 
 // Show Dashboard on page load

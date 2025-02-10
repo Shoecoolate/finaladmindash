@@ -136,45 +136,6 @@ h1, h2 {
   margin-top: -90px;
 }
 
-.dashboard-icons {
-  display: flex;
-  gap: 100px; /* Adjust space between icons */
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  width: 100%;
-  max-width: 800px;
-}
-
-.dashboard-icon {
-  width: 170px;
-  height: 150px;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  transition: transform 0.2s;
-  text-align: center;
-}
-
-.dashboard-icon img {
-  width: 75px;
-  height: auto;
-}
-
-.dashboard-icon p {
-  font-size: 14px;
-  margin-top: 8px;
-}
-
-.dashboard-icon:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 15px rgba(190, 99, 100, 0.8);
-}
 
 button, input, select, textarea {
   margin-top: 10px;

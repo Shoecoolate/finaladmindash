@@ -161,6 +161,8 @@ h1, h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+  top: 0; /* Aligns with the top of Late Employees */
 }
 
 .total-user-time-container h2 {
@@ -174,6 +176,48 @@ h1, h2 {
   font-weight: bold;
   color: #333;
 }
+
+/* Wrapper for Time In & Time Out */
+.total-user-time-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; /* Evenly distribute inside */
+  height: 300px; /* Same height as the Top 5 Late Employees container */
+}
+
+/* Total User Time Out - Same Style as Time In */
+.total-user-timeout-container {
+  width: 240px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.total-user-timeout-container {
+  position: relative;
+  bottom: 0; /* Aligns with bottom of Late Employees */
+}
+
+.total-user-timeout-container h2 {
+  font-size: 14px; /* Same as Total User Time In */
+  color: #621c1c;
+  margin-bottom: 5px;
+}
+
+.total-user-timeout-container p {
+  font-size: 20px; /* Same as Total User Time In */
+  font-weight: bold;
+  color: #333;
+}
+
 
 /* Top 5 Late Employees Container (Middle) */
 .top-late-employees-container {
@@ -253,7 +297,7 @@ h1, h2 {
   font-size: 14px;
   color: #621c1c;
   margin-bottom: 8px;
-  margin-top: 20px; /* Ensures it's at the top */
+  margin-top: 10px; /* Ensures it's at the top */
 }
 
 /* Bigger Space for Early Birds Names */

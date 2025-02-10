@@ -137,16 +137,19 @@ h1, h2 {
 }
 
 
-/* Wrapper container for both Total Time In & Late Employees */
+/* Centering the Containers Without Extra Space */
 .dashboard-stats-container {
   position: absolute;
-  top: 200px;
-  left: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Perfectly centers the row */
   display: flex;
-  gap: 20px; /* Space between the containers */
+  gap: 40px; /* Equal spacing between containers */
+  justify-content: center;
+  align-items: center;
 }
 
-/* Total User Time In Container */
+/* Total User Time In (Left Side) */
 .total-user-time-container {
   width: 240px;
   height: 120px;
@@ -172,7 +175,7 @@ h1, h2 {
   color: #333;
 }
 
-/* Top 5 Late Employees Container */
+/* Top 5 Late Employees Container (Middle) */
 .top-late-employees-container {
   width: 320px;
   height: 300px;
@@ -182,7 +185,7 @@ h1, h2 {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 15px;
 }
@@ -193,9 +196,10 @@ h1, h2 {
   margin-bottom: 8px;
 }
 
+/* Bigger Space for Late Employees Names */
 .late-employees-list {
   width: 90%;
-  height: 150px; /* Increased height for bigger space */
+  height: 150px;
   background: rgba(240, 240, 240, 0.9);
   border-radius: 5px;
   display: flex;
@@ -229,20 +233,19 @@ h1, h2 {
   background-color: #216a9c;
 }
 
-/* Top 5 Early Birds Container */
+/* Top 5 Early Birds Container (Right Side) */
 .top-early-birds-container {
   width: 320px;
-  height: 300px; /* Same height as late employees */
+  height: 300px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Align content at the top */
+  justify-content: flex-start;
   align-items: center;
   padding: 15px;
-  padding-top: 10px; /* Small padding for better spacing */
 }
 
 /* Position "Top 5 Early Birds" at the top */
@@ -253,10 +256,10 @@ h1, h2 {
   margin-top: 20px; /* Ensures it's at the top */
 }
 
-/* Bigger space for names */
+/* Bigger Space for Early Birds Names */
 .early-birds-list {
   width: 90%;
-  height: 200px; /* Increased height for more space */
+  height: 200px;
   background: rgba(240, 240, 240, 0.9);
   border-radius: 5px;
   display: flex;

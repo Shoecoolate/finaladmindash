@@ -134,6 +134,7 @@ h1, h2 {
   font-size: 75px;
   font-weight: bold;
   margin-top: -500px;
+  margin-right: 105px;
 }
 
 
@@ -222,7 +223,7 @@ h1, h2 {
 /* Top 5 Late Employees Container (Middle) */
 .top-late-employees-container {
   width: 320px;
-  height: 300px;
+  height: 400px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -232,6 +233,20 @@ h1, h2 {
   justify-content: flex-start;
   align-items: center;
   padding: 15px;
+}
+
+.total-late-employees {
+  font-size: 14px;  /* Pareho sa Top 5 Late Employees */
+  color: #621c1c;  /* Parehong kulay */
+  font-weight: bold;
+  margin-top: 5px; /* Bawasan ang space sa taas */
+  margin-bottom: 3px; /* Bawasan ang space sa baba */
+}
+
+.total-late-employees span {
+  font-size: 20px; /* Pareho sa Total User Time */
+  font-weight: bold;
+  color: #333;
 }
 
 
@@ -250,7 +265,7 @@ h1, h2 {
 /* Bigger Space for Late Employees Names */
 .late-employees-list {
   width: 90%;
-  height: 150px;
+  height: 500px; /* Gawing mas malaki ang height */
   background: rgba(240, 240, 240, 0.9);
   border-radius: 5px;
   display: flex;
@@ -258,10 +273,12 @@ h1, h2 {
   align-items: center;
   font-size: 14px;
   color: #333;
-  margin-bottom: 8px;
+  margin-bottom: 5px; /* Paliitin ang espasyo sa pagitan */
   padding: 10px;
   overflow-y: auto; /* Enables scrolling if names exceed space */
 }
+
+
 
 
 .total-late-employees h2{

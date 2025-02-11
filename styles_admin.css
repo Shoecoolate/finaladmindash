@@ -555,24 +555,43 @@ button:hover {
   background-color: #2980b9;
 }
 
-/* Export to Excel Container (Centered) */
+/* Keeps the container centered always */
 .export-container {
-  background-size: cover;
-  width: 600px;
-  height: 400px;
+  position: fixed; /* Prevents movement */
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 600px; /* Do not change */
+  height: 400px; /* Do not change */
+  background-size: cover;
   border-radius: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  
-  /* Centering the container */
+}
+
+#export-excel {
   position: absolute;
-  top: 50%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* Maintain size but allow responsiveness */
+  width: 90%; /* Responsive width */
+  max-width: 1200px; /* Maximum size */
+  min-width: 900px; /* Prevent it from shrinking too much */
+  height: auto;
+  min-height: 500px; /* Ensure it doesn’t shrink below this */
+  max-height: 750px; /* Optional: Limit max height */
 }
+
+
 
 /* Export Buttons */
 .export-button {
@@ -593,15 +612,18 @@ button:hover {
 }
 
 
+/* Ensures the title remains fixed and centered */
 #export-excel h1 {
   position: absolute;
-  top: 20px; 
-  left: 50%; 
-  transform: translateX(-50%);
+  top: 1px; /* Keep it above the container */
+  left: 50%; /* Move to the center */
+  transform: translateX(-50%); /* Perfectly center it */
   font-size: 75px;
   text-align: center;
   width: auto;
+  margin: 0
 }
+
 
 
 /* Ensure containers are properly aligned below the title */

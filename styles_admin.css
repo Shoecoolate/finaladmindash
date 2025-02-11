@@ -238,7 +238,13 @@ h1, h2 {
 .top-late-employees-container h2 {
   font-size: 14px;
   color: #621c1c;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
+}
+
+.top-late-employees-container p {
+  font-size: 20px; /* Same as Total User Time In */
+  font-weight: bold;
+  color: #333;
 }
 
 /* Bigger Space for Late Employees Names */
@@ -257,10 +263,19 @@ h1, h2 {
   overflow-y: auto; /* Enables scrolling if names exceed space */
 }
 
-.total-late-employees {
-  font-size: 14px;
-  color: #333;
+
+.total-late-employees h2{
+  font-size: 14px;  /* Pareho sa Top 5 Late Employees */
+  color: #621c1c;  /* Parehong kulay */
+  font-weight: bold; /* Optional: Para mas litaw */
   margin-bottom: 8px;
+}
+
+
+.total-late-employees p{
+  font-size: 20px; /* Same as Total User Time In */
+  font-weight: bold;
+  color: #333;
 }
 
 .view-late-button {

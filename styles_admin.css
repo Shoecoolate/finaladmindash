@@ -420,12 +420,25 @@ button:hover {
 
 
 #attendance-list {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;  /* Align the items at the top */
-  flex-direction: column;  /* Stack content vertically */
-  height: 100%;  /* Take full height to ensure the content fits */
+
+  /* Maintain size but allow responsiveness */
+  width: 90%; /* Responsive width */
+  max-width: 1200px; /* Maximum size */
+  min-width: 900px; /* Prevent it from shrinking too much */
+  height: auto;
+  min-height: 500px; /* Ensure it doesn’t shrink below this */
+  max-height: 750px; /* Optional: Limit max height */
+
 }
+
 
 /* Work Hours Preset Screen */
 #work-hours {
@@ -579,15 +592,17 @@ button:hover {
   background-color: #2980b9;
 }
 
+
 #export-excel h1 {
   position: absolute;
-  top: 20px; /* Keep it above the container */
-  left: 50%; /* Move to the center */
-  transform: translateX(-50%); /* Perfectly center it */
+  top: 20px; 
+  left: 50%; 
+  transform: translateX(-50%);
   font-size: 75px;
   text-align: center;
   width: auto;
 }
+
 
 /* Ensure containers are properly aligned below the title */
 #announcement {

@@ -919,3 +919,34 @@ button:hover {
   align-items: center;
   justify-content: center;
 }
+
+.superadmin {
+  position: absolute;
+  bottom: 55px; /* Moves it above the Sign Out button */
+  left: 37%;
+  width: max-content;
+  text-align: center;
+  transition: none !important; /* Disable animations */
+}
+
+.menu-item.superadmin {
+  color: #b92929;
+}
+
+.menu-item.superadmin:hover {
+  color: #a11818; /* Darker red on hover */
+}
+
+.superadmin img {
+  width: 30px; /* Adjust size as needed */
+  height: auto;
+}
+
+.superadmin:hover,
+.sign-out-text:hover {
+  background-color: transparent !important;
+}
+
+.superadmin:hover {
+  transform: none !important;
+}

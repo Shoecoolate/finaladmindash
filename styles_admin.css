@@ -922,11 +922,12 @@ button:hover {
 
 .superadmin {
   position: absolute;
-  bottom: 55px; /* Moves it above the Sign Out button */
-  left: 37%;
+  bottom: 60px; /* Moves it above the Sign Out button */
+  left: 39%;
   width: max-content;
   text-align: center;
   transition: none !important; /* Disable animations */
+  font-size: 18px;
 }
 
 .menu-item.superadmin {
@@ -938,8 +939,11 @@ button:hover {
 }
 
 .superadmin img {
-  width: 30px; /* Adjust size as needed */
+  width: 20px; /* Adjust size as needed */
   height: auto;
+  position: relative;
+  bottom: 3px; /* Adjust this value to move the icon higher */
+  left: 5%;
 }
 
 .superadmin:hover,

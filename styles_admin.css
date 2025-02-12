@@ -883,36 +883,34 @@ button:hover {
   color: black !important;
 }
 
-#leave-approval h1 {
-  font-size: 100px;
-
-}
-
 #leave-approval {
+  position: fixed; /* Keep it fixed in place */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Perfectly center it */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
-  overflow: hidden;
-  margin-top: -40px;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 #leave-approval h1 {
-  top: 40px; /* Keep it above the container */
-  left: 100px; /* Move to the center */
+  position: relative;
   font-size: 75px;
   text-align: center;
-  margin-top: 80px;
+  margin-bottom: 20px;
   
 }
 
 #leave-approval_rectangle {
   width: 700px;
-  justify-content: center;
-  height: 500px; 
+  height: 500px;
   background-color: #f0f0f0;
-  
   border-radius: 15px;
-  overflow: hidden;  /* Prevent any overflow */
-  box-sizing: border-box;  /* Ensure padding is included in width/height */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

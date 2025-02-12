@@ -54,7 +54,8 @@ const menuOrder = [
   "work-hours",
   "announcement",
   "export-excel",
-  "leave-approval"
+  "leave-approval",
+  "about"
 ];
 
 // Store the currently active screen

@@ -954,3 +954,75 @@ button:hover {
 .superadmin:hover {
   transform: none !important;
 }
+
+#about {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.about-container {
+  background: rgb(255, 255, 255);
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  text-align: justify;
+  width: 1000px;
+  height: auto; /* Adjust height dynamically based on content */
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; /* Ensures text stacks properly */
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Adds space between paragraphs */
+}
+
+#about h1 {
+  font-size: 75px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.interns {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center "Software Developers:" */
+  width: 100%;
+}
+
+/* Apply same text style as Dashboard Stats */
+.about-container p, .interns p, .intern-names {
+  font-size: 15px; /* Match dashboard stats */
+  color: #000000; /* Match dashboard color */
+  background: linear-gradient(90deg, #000000, #000000);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+
+
+/* Center "Software Developers:" */
+.interns p:first-child {
+  margin-bottom: 3px; /* Bawasan ang space sa pagitan */
+  text-align: center;
+}
+
+.intern-names {
+  font-size: 15px !important; /* Force apply the font size */
+  font-weight: normal; /* Make it less bold */
+  color: #000000; /* Keep the color */
+  text-align: left;
+  width: 100%;
+  padding-left: 551px; /* Adjust for alignment */
+}
+
+
+

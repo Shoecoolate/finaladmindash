@@ -945,7 +945,7 @@ button:hover {
 
 .superadmin {
   position: absolute;
-  bottom: 60px; /* Moves it above the Sign Out button */
+  bottom: 70px; /* Moves it above the Sign Out button */
   left: 39%;
   width: max-content;
   text-align: center;

@@ -996,7 +996,7 @@ button:hover {
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   text-align: justify;
-  width: 1000px;
+  width: 1250px;
   height: auto; /* Adjust height dynamically based on content */
   border-radius: 15px;
   overflow: hidden;

@@ -103,12 +103,12 @@ h1, h2 {
 }
 
 .menu-item.sign-out {
-  color: #b92929;
+  color: #ffffff;
   background-color: transparent !important; /* Ensure no background change */
 }
 
 .menu-item.sign-out:hover {
-  color: #ffffff;
+  color: #621c1c;
   background-color: transparent !important; /* Prevent hover background */
 }
 
@@ -943,39 +943,10 @@ button:hover {
   justify-content: center;
 }
 
-.superadmin {
-  position: absolute;
-  bottom: 70px; /* Moves it above the Sign Out button */
-  left: 39%;
-  width: max-content;
-  text-align: center;
-  transition: none !important; /* Disable animations */
-  font-size: 18px;
-}
 
-.menu-item.superadmin {
-  color: #b92929;
-}
 
-.menu-item.superadmin:hover {
-  color: #ffffff; /* Darker red on hover */
-}
-
-.superadmin img {
-  width: 20px; /* Adjust size as needed */
-  height: auto;
-  position: relative;
-  bottom: 3px; /* Adjust this value to move the icon higher */
-  left: 5%;
-}
-
-.superadmin:hover,
 .sign-out-text:hover {
   background-color: transparent !important;
-}
-
-.superadmin:hover {
-  transform: none !important;
 }
 
 #about {

@@ -216,6 +216,11 @@ header {
 }
 
 .panel { /*CONTENTS INSIDE THE SIDE PANEL*/
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     text-align: center;
     font-size: 12px; /* Adjust font-size as needed */
     background: #621c1c;
@@ -224,10 +229,10 @@ header {
     margin-bottom: 15px; /* Adjust space between panels */
     border-radius: 10px;
     width: 100%;
-    height: 292px;
+    height: auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
     background-color: #621c1c; /* Fallback for older browsers */
-    padding: 25px;
+    padding: 15px;
 }
 
 .panel:hover {
@@ -245,48 +250,63 @@ header {
 
 
 /* Note styles for Birthdays and Milestones */
-.birthdays .note,
-.milestones .note {
+.birthdays .note, .milestones .note {
     background: #e2e2e2;
-    width: 180px; /* Set a fixed width */
-    height: 131px; /* Set height for individual notes */
-    margin-top: 15px;
-    border-radius: 5px;
+    width: 110%;
+    height: 20vh;
+    max-width: 500px;
+    margin-bottom: 24px;
+    bottom: -13px;
+    max-height: 250px;
+    margin: 5px;
+    justify-content: center;
     position: relative;
-    top: -9px;
-    left: -20px;
+    border-radius: 5px;
+}
+
+.announcements {
+    flex-grow: 1; /* Allows it to expand and fill remaining space */
+    display: flex;
+    flex-direction: column;
 }
 
 /* Note styles for Announcements (Longer Note) */
+/* Specific styles for Announcements Note (Independent) */
 .announcements .note {
     background: #e2e2e2;
-    width: 180px; /* Increase width for Announcement */
-    height: 248px; /* Increase height for Announcement */
-    margin-top: 15px;
-    border-radius: 5px;
+    width: 110%;
+    height: 30vh;
+    max-width: 500px;
+    bottom: -13px;
+    max-height: 500px;
+    margin: 5px;
+    justify-content: center;
     position: relative;
-    top: -9px;
-    left: -20px;
+    border-radius: 5px;
 }
 
 .sidebar {
     position: absolute;
     right: 0;
     top: 0;
-    width: 15%; 
+    width: 15%;
     background-image: url('ojt photos/red1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100%;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevents scrollbar */
 }
 
 /* Birthdays container */
-.birthdays,
-.milestones {
-    margin-bottom: 10px; /* Space between Birthdays and Milestones */
-    
+.birthdays, .milestones, .announcements {
+    flex: 1; /* Makes them shrink evenly */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .birthdays .panel,

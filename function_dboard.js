@@ -61,6 +61,19 @@ signOutBtn.addEventListener('click', () => {
     window.location.href = 'index_login.html'; // Replace 'login.html' with the actual login page path
 });
 
+window.addEventListener('resize', adjustNotes);
+
+function adjustNotes() {
+    document.querySelectorAll('.note').forEach(note => {
+        let parent = note.closest('.panel');
+
+        if (!parent.classList.contains('announcements')) {
+            note.style.width = `${parent.clientWidth * 0.9}px`;
+            note.style.height = `${parent.clientHeight * 0.8}px`;
+        }
+    });
+}
+adjustNotes();
     
 
     

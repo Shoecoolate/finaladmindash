@@ -961,20 +961,19 @@ button:hover {
   height: 100%;
 }
 
+/* About Container */
 .about-container {
   background: rgb(255, 255, 255);
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
   text-align: justify;
   width: 1250px;
-  height: auto; /* Adjust height dynamically based on content */
+  height: auto; /* Adjust height dynamically */
   border-radius: 15px;
   overflow: hidden;
   display: flex;
-  flex-direction: column; /* Ensures text stacks properly */
-  align-items: center;
-  justify-content: center;
-  gap: 10px; /* Adds space between paragraphs */
+  flex-direction: column;
+  gap: 10px; /* Adds space between elements */
 }
 
 #about h1 {
@@ -1022,3 +1021,41 @@ button:hover {
   color: transparent;
   text-shadow: none;
 }
+
+/* Ensure Intern Cards Stay in One Row */
+.intern-info {
+  display: flex;
+  align-items: center; /* Align photos and text vertically */
+  gap: 20px; /* Space between intern cards */
+  margin-left: 110px; /* Keep everything on the left */
+}
+
+/* Each Intern's Card */
+.intern-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center photo, name, and role */
+  text-align: center;
+}
+
+/* Intern Photo - Centered */
+.intern-photo {
+  width: 90px;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Intern Name & Role */
+.intern-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 0; /* Remove bottom space */
+}
+
+.intern-role {
+  font-size: 11px !important; /* Smaller font */
+  color: gray;
+  margin-top: -1px; /* Reduce space between name and role */
+}
+

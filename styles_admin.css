@@ -1027,7 +1027,7 @@ button:hover {
   display: flex;
   align-items: center; /* Align photos and text vertically */
   gap: 20px; /* Space between intern cards */
-  margin-left: 110px; /* Keep everything on the left */
+  margin-left: 120px; /* Keep everything on the left */
 }
 
 /* Each Intern's Card */

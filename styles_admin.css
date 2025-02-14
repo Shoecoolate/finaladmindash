@@ -983,36 +983,42 @@ button:hover {
   margin-bottom: 20px;
 }
 
-.interns {
+/* Align logos side by side */
+.about-logo-container {
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Center "Software Developers:" */
-  width: 100%;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Align vertically */
+  gap: 20px; /* Space between logos */
+  margin-bottom: 20px; /* Space below logos */
+  position: relative; /* Needed for individual positioning */
 }
 
+/* Set uniform size for both logos */
+.about-logo {
+  width: 120px; /* Adjust size as needed */
+  height: auto;
+}
+
+/* Adjust the Mapúa logo size */
+.mapua-logo {
+  width: 127px; /* Change this value to adjust size */
+  position: relative;
+  bottom: 3.5px; /* Move down (increase value) or move up (use negative value) */
+}
+
+/* Adjust the position of the CCIS logo */
+.ccis-logo {
+  position: relative;
+  bottom: 11px; /* Move down (increase value) or move up (use negative value) */
+}
+
+
 /* Apply same text style as Dashboard Stats */
-.about-container p, .interns p, .intern-names {
+.about-container p{
   font-size: 15px; /* Match dashboard stats */
   color: #000000; /* Match dashboard color */
   background: linear-gradient(90deg, #000000, #000000);
   -webkit-background-clip: text;
   color: transparent;
   text-shadow: none;
-}
-
-
-
-/* Center "Software Developers:" */
-.interns p:first-child {
-  margin-bottom: 3px; /* Bawasan ang space sa pagitan */
-  text-align: center;
-}
-
-.intern-names {
-  font-size: 15px !important; /* Force apply the font size */
-  font-weight: normal; /* Make it less bold */
-  color: #000000; /* Keep the color */
-  text-align: left;
-  width: 100%;
-  padding-left: 551px; /* Adjust for alignment */
 }

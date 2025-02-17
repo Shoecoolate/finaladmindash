@@ -82,8 +82,3 @@ function adjustLayout() {
     document.querySelector('.container').style.transform = `scale(${scale})`;
 }
 adjustLayout();
-
-
-    
-
-    

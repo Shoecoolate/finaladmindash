@@ -74,6 +74,16 @@ function adjustNotes() {
     });
 }
 adjustNotes();
+
+window.addEventListener('resize', adjustLayout);
+
+function adjustLayout() {
+    let scale = Math.min(window.innerWidth / 1920, 1); // Keep scaling balanced
+    document.querySelector('.container').style.transform = `scale(${scale})`;
+}
+adjustLayout();
+
+
     
 
     

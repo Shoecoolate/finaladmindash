@@ -17,31 +17,34 @@
                 <img src="ojt photos/agrilogo2.png" alt="Agridom">
             </div>
         </header>
-        <div class="clock">
-            <div class="clock-content">
-                <h1 id="time">00:00:00 PM</h1>
-                <p id="date">
-                    <span>January 21, 2025</span>
-                    <span>Tuesday</span>
-                </p>
-                <div>
-                    <button class="btn"> TIME IN</button> <!-- Icon for TIME IN -->
-                    <button class="btn"> TIME OUT</button> <!-- Icon for TIME OUT -->
+        
+        <!-- Wrap main content except sidebar -->
+        <div class="main-content">
+            <div class="clock">
+                <div class="clock-content">
+                    <h1 id="time">00:00:00 PM</h1>
+                    <p id="date">
+                        <span>January 21, 2025</span>
+                        <span>Tuesday</span>
+                    </p>
+                    <div>
+                        <button class="btn"> TIME IN</button> 
+                        <button class="btn"> TIME OUT</button> 
+                    </div>
                 </div>
-            </div>
-            <div class="camera">
-                <video id="video" autoplay></video>
-            </div>
-        </div>  
+                <div class="camera">
+                    <video id="video" autoplay></video>
+                </div>
+            </div>  
 
-        <div class="attendance-list">
-            <h2>Attendance List</h2>
-            <div class="note"></div> <!-- Yellow note -->
-            <ul id="attendance-items">
-                <!-- JavaScript dynamically appends list items here -->
-            </ul>
+            <div class="attendance-list">
+                <h2>Attendance List</h2>
+                <div class="note"></div>
+                <ul id="attendance-items"></ul>
+            </div>
         </div>
 
+        <!-- Sidebar remains unchanged -->
         <div class="sidebar">
             <div class="birthdays">
                 <div class="panel">
@@ -60,15 +63,15 @@
             <div class="announcements">
                 <div class="panel">
                     <h3><i class="fas fa-bullhorn"></i> Announcements</h3>
-                    <div class="note"></div> <!-- Add text for testing -->
+                    <div class="note"></div>
                 </div>
             </div>
         
-            <!-- Sign Out Button -->
-            <button class="sign-out-btn"><i class="fas fa-sign-out-alt"></i> Sign Out</button> <!-- Independent -->
+            <button class="sign-out-btn"><i class="fas fa-sign-out-alt"></i> Sign Out</button>
         </div>
     </div>
     
     <script src="function_dboard.js"></script>
 </body>
+
 </html>

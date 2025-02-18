@@ -378,3 +378,21 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   });
 });
+
+
+// Listen for left and right arrow keys for keyboard navigation
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'ArrowLeft') {
+    let currentIndex = menuOrder.indexOf(currentScreen);
+    if (currentIndex > 0) {
+      let previousScreen = menuOrder[currentIndex - 1];
+      navigateTo(previousScreen); // Navigate to previous screen
+    }
+  } else if (event.key === 'ArrowRight') {
+    let currentIndex = menuOrder.indexOf(currentScreen);
+    if (currentIndex < menuOrder.length - 1) {
+      let nextScreen = menuOrder[currentIndex + 1];
+      navigateTo(nextScreen); // Navigate to next screen
+    }
+  }
+});

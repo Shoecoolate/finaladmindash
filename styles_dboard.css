@@ -115,7 +115,8 @@ header {
 
 .camera {
     position: absolute; /* Absolute positioning */
-    width: 420px;
+    width: 20%; /* Adjust width for smaller screens */
+    flex: 0 0 auto;
     height: 350px;
     border: 2px solid #621c1c;
     border-radius: 12px;
@@ -158,16 +159,16 @@ header {
 }
 
 .attendance-list {
-    width: 1220px;
+    width: 90%; /* Adjust width for smaller screens */
     flex: 0 0 auto;
-    margin: 20px 40px;
+    margin: 20px auto;
     background: #621c1c;
     border-radius: 10px;
     padding: 30px;
     top: -30px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
     position: relative;
-    height: 230px;
+    height: calc(93vh - 450px); /* Adjust dynamically based on viewport height */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -189,8 +190,9 @@ header {
 
 .attendance-list .note {
     background: #e2e2e2;
-    width: 1210px;
-    height: 185px;
+    width: 99%; /* Adjust width for smaller screens */
+    flex: 0 0 auto;
+    height: calc(87vh - 450px); /* Adjust dynamically based on viewport height */
     margin-top: 20px;
     border-radius: 10px;
     position: absolute;
@@ -200,6 +202,7 @@ header {
     box-sizing: border-box;
     z-index: 1;
     overflow-y: auto;
+    margin: 20px auto;
 }
 
 #attendance-items {
